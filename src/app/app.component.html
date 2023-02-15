@@ -1,0 +1,36 @@
+<main [class]="theme">
+  <div class="chart-col">
+    <div style="position: absolute; top: 50px; left: 50px; right: 50px; bottom: 50px">
+      <combo-chart-component
+        class="chart-container"
+        [view]="view"
+        [scheme]="comboBarScheme"
+        [colorSchemeLine]="lineChartScheme"
+        [results]="barChart"
+        [animations]="animations"
+        [lineChart]="lineChartSeries"
+        [tooltipDisabled]="tooltipDisabled"
+        [yAxisTickFormatting]="yLeftTickFormat"
+        [yLeftAxisScaleFactor]="yLeftAxisScale"
+        [yRightAxisScaleFactor]="yRightAxisScale"
+        [yRightAxisTickFormatting]="yRightTickFormat"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [legendTitle]="legendTitle"
+        [legendPosition]="legendPosition"
+        [showGridLines]="showGridLines"
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [showRightYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        [yAxisLabelRight]="yAxisLabelRight"
+        [noBarWhenZero]="noBarWhenZero"
+        (select)="onSelect($event)"
+      >
+      </combo-chart-component>
+    </div>
+  </div>
+</main>
