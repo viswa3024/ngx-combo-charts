@@ -63,6 +63,7 @@ export class ComboSeriesVerticalComponent implements OnChanges {
   @Input() seriesName: string;
   @Input() animations: boolean = true;
   @Input() noBarWhenZero: boolean = true;
+  @Input() barWidth;
 
   @Output() select = new EventEmitter();
   @Output() activate = new EventEmitter();
@@ -109,11 +110,13 @@ export class ComboSeriesVerticalComponent implements OnChanges {
         formattedLabel,
         height: 0,
         x: 0,
-        y: 0
+        y: 0,
+        customcolors: {name: 'United Kingdom', value: 'red'}
       };
 
       if (this.type === 'standard') {
         bar.height = Math.abs(this.yScale(value) - this.yScale(0));
+        bar.width = this.barWidth;
         bar.x = this.xScale(label);
 
         if (value < 0) {

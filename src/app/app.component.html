@@ -6,6 +6,7 @@
         [view]="view"
         [scheme]="comboBarScheme"
         [colorSchemeLine]="lineChartScheme"
+        [customColors] = ""
         [results]="barChart"
         [animations]="animations"
         [lineChart]="lineChartSeries"
@@ -28,6 +29,7 @@
         [yAxisLabel]="yAxisLabel"
         [yAxisLabelRight]="yAxisLabelRight"
         [noBarWhenZero]="noBarWhenZero"
+        [barWidth] = "barWidth"
         (select)="onSelect($event)"
       >
       </combo-chart-component>

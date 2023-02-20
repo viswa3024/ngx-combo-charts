@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
   yScaleMax: number;
   showDataLabel: boolean = false;
   noBarWhenZero: boolean = true;
+  barWidth: number = 30;
   trimXAxisTicks: boolean = true;
   trimYAxisTicks: boolean = true;
   rotateXAxisTicks: boolean = true;
@@ -61,14 +62,17 @@ export class AppComponent implements OnInit {
     name: 'coolthree',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#01579b', '#7aa3e5', '#a8385d', '#00bfa5']
+    //domain: ['red', 'green', 'blue'] - 1
+    //domain: ['blue', 'red', 'green'] - 2
+    //domain: ['#01579b', '#7aa3e5', '#a8385d', '#00bfa5']
+    domain: ['green', 'blue', 'red']
   };
 
   comboBarScheme: Color = {
     name: 'singleLightBlue',
     selectable: true,
     group: ScaleType.Ordinal,
-    domain: ['#01579b']
+    domain: ['white']
   };
 
   showRightYAxisLabel: boolean = true;

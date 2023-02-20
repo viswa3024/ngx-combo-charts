@@ -71,31 +71,6 @@ export const lineChartSeries = [
         name: 'China'
       }
     ]
-  },
-  {
-    name: 'Computers',
-    series: [
-      {
-        value: 2,
-        name: 'USA'
-      },
-      {
-        value: 4,
-        name: 'United Kingdom'
-      },
-      {
-        value: 20,
-        name: 'France'
-      },
-      {
-        value: 30,
-        name: 'Japan'
-      },
-      {
-        value: 35,
-        name: 'China'
-      }
-    ]
   }
 ];
 
@@ -114,7 +89,7 @@ export const barChart: any = [
   },
   {
     name: 'Japan',
-    value: 0
+    value: 400
   },
   {
     name: 'China',

@@ -60,6 +60,7 @@ export class ComboChartComponent extends BaseChartComponent {
   @Input() rangeFillOpacity: number;
   @Input() animations: boolean = true;
   @Input() noBarWhenZero: boolean = true;
+  @Input() barWidth: number = 8;
 
   @Output() activate: EventEmitter<any> = new EventEmitter();
   @Output() deactivate: EventEmitter<any> = new EventEmitter();
@@ -352,6 +353,10 @@ export class ComboChartComponent extends BaseChartComponent {
     }
     this.colors = new ColorHelper(this.scheme, this.schemeType, domain, this.customColors);
     this.colorsLine = new ColorHelper(this.colorSchemeLine, this.schemeType, domain, this.customColors);
+
+    console.log("this.colorsLine: ", this.colorsLine)
+    console.log("this.colorSchemeLine: ", this.colorSchemeLine)
+    console.log("this.colors: ", this.colors)
   }
 
   getLegendOptions() {
