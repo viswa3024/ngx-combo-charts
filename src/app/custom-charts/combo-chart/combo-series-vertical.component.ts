@@ -64,6 +64,7 @@ export class ComboSeriesVerticalComponent implements OnChanges {
   @Input() animations: boolean = true;
   @Input() noBarWhenZero: boolean = true;
   @Input() barWidth;
+  @Input() lineCustomColors: any = [];
 
   @Output() select = new EventEmitter();
   @Output() activate = new EventEmitter();

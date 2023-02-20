@@ -61,6 +61,9 @@ export class ComboChartComponent extends BaseChartComponent {
   @Input() animations: boolean = true;
   @Input() noBarWhenZero: boolean = true;
   @Input() barWidth: number = 8;
+  @Input() lineCustomColors: any = [];
+
+
 
   @Output() activate: EventEmitter<any> = new EventEmitter();
   @Output() deactivate: EventEmitter<any> = new EventEmitter();
@@ -352,7 +355,7 @@ export class ComboChartComponent extends BaseChartComponent {
       domain = this.yDomain;
     }
     this.colors = new ColorHelper(this.scheme, this.schemeType, domain, this.customColors);
-    this.colorsLine = new ColorHelper(this.colorSchemeLine, this.schemeType, domain, this.customColors);
+    this.colorsLine = new ColorHelper(this.colorSchemeLine, this.schemeType, domain, this.lineCustomColors);
 
     console.log("this.colorsLine: ", this.colorsLine)
     console.log("this.colorSchemeLine: ", this.colorSchemeLine)

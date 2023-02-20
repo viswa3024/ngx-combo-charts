@@ -54,6 +54,7 @@ export class AppComponent implements OnInit {
   maxYAxisTickLength: number = 16;
   strokeColor: string = '#FFFFFF';
   strokeWidth: number = 2;
+  lineCustomColors = [{name:"Tablets",value: 'white'}, {name:"Cell Phones",value: 'blue'}, {name:"GDP Per Capita",value: 'yellow'}]
 
   // Combo Chart
   barChart: any[] = barChart;
