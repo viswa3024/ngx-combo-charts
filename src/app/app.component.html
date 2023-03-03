@@ -2,7 +2,7 @@
   <div class="chart-col">
     <div style="position: absolute; top: 50px; left: 50px; right: 50px; bottom: 50px">
       <!-- [customColors] = "lineCustomColors" -->
-      <combo-chart-component
+      <combo-chart-component #chart
         class="chart-container"
         [view]="view"
         [scheme]="comboBarScheme"
@@ -20,6 +20,7 @@
         [xAxis]="showXAxis"
         [yAxis]="showYAxis"
         [legend]="showLegend"
+        [activeEntries] = "activeEntries"
         [legendTitle]="legendTitle"
         [legendPosition]="legendPosition"
         [showGridLines]="showGridLines"

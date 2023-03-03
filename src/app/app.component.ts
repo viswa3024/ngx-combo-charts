@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 
 import { Color } from '@swimlane/ngx-charts/utils/color-sets';
@@ -6,6 +6,8 @@ import { Color } from '@swimlane/ngx-charts/utils/color-sets';
 import { barChart, lineChartSeries } from './combo-chart-data';
 import { LegendPosition } from '@swimlane/ngx-charts/common/types/legend.model';
 import { ScaleType } from '@swimlane/ngx-charts/common/types/scale-type.enum';
+import { CustomLinerChartServiceService } from './service/custom-liner-chart-service.service';
+import {CustomLinerChartServiceServiceOne } from './service/custom-liner-chart-1-service.service';
 
 
 @Component({
@@ -54,7 +56,15 @@ export class AppComponent implements OnInit {
   maxYAxisTickLength: number = 16;
   strokeColor: string = '#FFFFFF';
   strokeWidth: number = 2;
-  lineCustomColors = [{name:"Tablets",value: 'white'}, {name:"Cell Phones",value: 'blue'}, {name:"GDP Per Capita",value: 'yellow'}]
+  activeEntries: any = [
+    {
+        "name": "Cell Phones"
+    },
+    {
+        "name": "Tablets"
+    }
+]
+  lineCustomColors = [{name:"Tablets",value: 'red'}, {name:"Cell Phones",value: 'blue'}, {name:"GDP Per Capita",value: 'yellow'}]
 
   // Combo Chart
   barChart: any[] = barChart;
@@ -79,10 +89,24 @@ export class AppComponent implements OnInit {
   showRightYAxisLabel: boolean = true;
   yAxisLabelRight: string = 'Utilization';
 
+  @ViewChild('chart') chart: any;
 
-  constructor() {
+
+
+
+  constructor(private customLinerChartService: CustomLinerChartServiceService, private CustomLinerChartServiceServiceOne: CustomLinerChartServiceServiceOne) {
   }
+
+
+  
+	ngAfterViewInit() {
+    console.log("this.chart: ", this.chart)
+		this.customLinerChartService.showDots(this.chart);
+    
+	}
+
   ngOnInit() {
+
   }
 
   /*
