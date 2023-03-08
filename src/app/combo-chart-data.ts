@@ -23,32 +23,6 @@ export const lineChart: any = [
 
 export const lineChartSeries = [
   {
-    name: 'Cell Phones',
-    series: [
-      {
-        value: 10,
-        name: 'USA'
-      },
-      {
-        value: 20,
-        name: 'United Kingdom'
-      },
-      {
-        value: 30,
-        name: 'France'
-      },
-      {
-        value: 40,
-        name: 'Japan'
-      },
-      {
-        value: 10,
-        name: 'China'
-      }
-    ],
-    dot: true
-  },
-  {
     name: 'Tablets',
     series: [
       {
@@ -71,8 +45,32 @@ export const lineChartSeries = [
         value: 100,
         name: 'China'
       }
-    ],
-    dot: true
+    ]
+  },
+  {
+    name: 'Cell Phones',
+    series: [
+      {
+        value: 10,
+        name: 'USA'
+      },
+      {
+        value: 20,
+        name: 'United Kingdom'
+      },
+      {
+        value: 30,
+        name: 'France'
+      },
+      {
+        value: 40,
+        name: 'Japan'
+      },
+      {
+        value: 10,
+        name: 'China'
+      }
+    ]
   }
 ];
 
@@ -91,7 +89,7 @@ export const barChart: any = [
   },
   {
     name: 'Japan',
-    value: 0
+    value: 400
   },
   {
     name: 'China',

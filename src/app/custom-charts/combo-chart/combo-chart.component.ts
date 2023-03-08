@@ -286,6 +286,8 @@ export class ComboChartComponent extends BaseChartComponent {
   }
 
   getXScaleLine(domain, width): any {
+
+    console.log("now1 width", width)
     let scale;
     if (this.bandwidth === undefined) {
       this.bandwidth = width - this.barPadding;
@@ -301,6 +303,11 @@ export class ComboChartComponent extends BaseChartComponent {
         scale = scale.nice();
       }
     } else if (this.scaleType === 'ordinal') {
+
+      console.log("now2 offset + this.bandwidth / 2: ", offset + this.bandwidth / 2)
+      console.log("now2 width - offset - this.bandwidth / 2: ", width - offset - this.bandwidth / 2)
+      console.log("now2 this.bandwidth : ", this.bandwidth)
+      console.log("now2 offset: ", offset)
       scale = scalePoint()
         .range([offset + this.bandwidth / 2, width - offset - this.bandwidth / 2])
         .domain(domain);
@@ -317,8 +324,9 @@ export class ComboChartComponent extends BaseChartComponent {
 
   getXScale(): any {
     this.xDomain = this.getXDomain();
-    const spacing = this.xDomain.length / (this.dims.width / this.barPadding + 1);
-    return scaleBand().range([0, this.dims.width]).paddingInner(spacing).domain(this.xDomain);
+    const spacing = this.xDomain === 1 ? this.barWidth : this.xDomain.length / (this.dims.width / this.barPadding + 1) ;
+    const dimsWidth = this.xDomain === 1 ?  this.dims.width - this.barWidth : this.dims.width;
+    return scaleBand().range([0, dimsWidth]).paddingInner(spacing).domain(this.xDomain);
   }
 
   getYScale(): any {

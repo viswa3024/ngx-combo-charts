@@ -51,6 +51,7 @@ import { BarOrientation } from '@swimlane/ngx-charts/common/types/bar-orientatio
 })
 export class ComboSeriesVerticalComponent implements OnChanges {
   @Input() dims;
+  @Input() results: any;
   @Input() type = 'standard';
   @Input() series;
   @Input() seriesLine;
@@ -84,6 +85,8 @@ export class ComboSeriesVerticalComponent implements OnChanges {
   }
 
   update(): void {
+
+    console.log("this.series: ", this.series)
     let width;
     if (this.series.length) {
       width = this.xScale.bandwidth();
@@ -117,7 +120,16 @@ export class ComboSeriesVerticalComponent implements OnChanges {
 
       if (this.type === 'standard') {
         bar.height = Math.abs(this.yScale(value) - this.yScale(0));
-        bar.width = this.barWidth;
+
+        console.log("now bar.width: ", bar.width)
+        //bar.width = this.barWidth;
+
+        const xDomain = this.getXDomain();
+
+        if(xDomain.length === 1){
+          bar.width = this.barWidth;
+        }
+        
         bar.x = this.xScale(label);
 
         if (value < 0) {
@@ -194,6 +206,11 @@ export class ComboSeriesVerticalComponent implements OnChanges {
       return entry.name === d.name && entry.series === d.series;
     });
     return item !== undefined;
+  }
+
+
+  getXDomain(): any[] {
+    return this.series?.map(d => d.name);
   }
 
   onClick(data): void {
